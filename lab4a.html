@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab 4a - JavaScript</title>
+</head>
+<body>
+<h2>Name: Mohammed Ashraf Alawi</h2>
+<h2>Matric No: AI230212</h2>
+<h2>Section: 4</h2>
+<hr>
+
+
+  <h1>BIT21503 Web Development - Lab 4a</h1>
+  <p>JavaScript Exercises</p>
+
+  <!-- Q1 -->
+  <button onclick="runQ1()">Run Q1</button>
+  <p id="output1"></p>
+
+  <!-- Q2 -->
+  <button onclick="runQ2()">Run Q2</button>
+  <p id="output2"></p>
+
+  <!-- Q3 -->
+  <button onclick="runQ3()">Run Q3</button>
+  <p id="output3"></p>
+
+  <!-- Q4 -->
+  <button onclick="runQ4()">Run Q4</button>
+  <p id="output4"></p>
+
+  <!-- Q5 -->
+  <button onclick="runQ5()">Run Q5</button>
+  <p id="output5"></p>
+
+  <script>
+    // ================== Q1 ==================
+    function runQ1() {
+      let text = "";
+      for (let i = 1; i <= 10; i++) {
+        text += i + "<br>";
+      }
+      text += "Loop finished!";
+      document.getElementById("output1").innerHTML = text;
+    }
+
+    // ================== Q2 ==================
+    function runQ2() {
+      let value = prompt("Enter a value:");
+      if (value === "UTHM") {
+        document.getElementById("output2").innerHTML = "Welcome to UTHM!";
+      } else {
+        document.getElementById("output2").innerHTML = "Invalid entry!";
+      }
+    }
+
+    // ================== Q3 ==================
+    // Arrow function to calculate sum
+    const calculateSum = (a, b) => a + b;
+
+    function runQ3() {
+      let num1 = parseFloat(prompt("Enter first number:"));
+      let num2 = parseFloat(prompt("Enter second number:"));
+
+      if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById("output3").innerHTML = "Invalid input! Please enter numbers.";
+      } else {
+        let sum = calculateSum(num1, num2);
+        document.getElementById("output3").innerHTML = "Sum = " + sum;
+      }
+    }
+
+    // ================== Q4 ==================
+    const car = {
+      brand: "Toyota",
+      model: "Corolla",
+      year: 2020,
+      carDetails: function() {
+        return this.brand + " " + this.model + " (" + this.year + ")";
+      }
+    };
+
+    function runQ4() {
+      document.getElementById("output4").innerHTML = car.carDetails();
+    }
+
+    // ================== Q5 ==================
+    function runQ5() {
+      let fruits = ["Apple", "Banana"];
+
+      // Add "Mango" to the end
+      fruits.push("Mango");
+
+      // Add "Grapes" to the beginning
+      fruits.unshift("Grapes");
+
+      // Remove the last fruit
+      fruits.pop();
+
+      // Remove the first fruit
+      fruits.shift();
+
+      document.getElementById("output5").innerHTML = "Final fruits array: " + fruits.join(", ");
+    }
+  </script>
+
+</body>
+</html>
